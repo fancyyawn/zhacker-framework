@@ -36,3 +36,69 @@
 * zhacker-boot-starter-cache: 一个简单的缓存starter
 * zhacker-boot-starter-swagger: 快速配置swagger
 * zhacker-boot-starter-job: 快速引入elastic-job-lite
+
+
+## 如何使用
+
+1. 下载源码
+``` 
+git clone https://github.com/fancyyawn/zhacker-framework.git
+```
+
+2. maven编译
+
+``` 
+mvn clean install -Dmaven.test.skip
+```
+
+3. 在maven项目中引用starter
+
+``` 
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>zhacker-boot-parent</artifactId>
+        <groupId>top.zhacker</groupId>
+        <version>2.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>zhacker-sample-spu</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>top.zhacker</groupId>
+            <artifactId>zhacker-boot-starter-event-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.zhacker</groupId>
+            <artifactId>zhacker-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.zhacker</groupId>
+            <artifactId>zhacker-boot-starter-swagger</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
