@@ -2,11 +2,13 @@
 
 >个人微服务实践公共类库，参照spring-boot管理所有的maven依赖，提供了常用的starter。 具体子项目功能如下：
 
-## zhacker-core
+## 子项目简介
+
+#### zhacker-core
 
 > 包含各核心基类，如实体基类、事件基类、校验基类、通用业务异常、应用层公共请求基类和响应类等。
 
-## zhacker-boot
+#### zhacker-boot
 
 > 各通用功能的实现
 
@@ -17,15 +19,15 @@
 * ribbon: 权重和标签路由策略实现
 * cache: 多级缓存封装（redis+caffeine）
 
-##  zhacker-boot-dependencies
+####  zhacker-boot-dependencies
 
 > 参照spring-boot的maven依赖管理
 
-## zhacker-boot-parent
+#### zhacker-boot-parent
 
 > 各项目依赖的parent，取代spring-boot-parent。
 
-## zhacker-boot-starters
+#### zhacker-boot-starters
 
 > 包装zhacker-boot中通用功能的starter，以下只罗列了部分
 
@@ -51,7 +53,7 @@ git clone https://github.com/fancyyawn/zhacker-framework.git
 mvn clean install -Dmaven.test.skip
 ```
 
-3. 在maven项目中引用starter
+3. 在maven项目中引用parent和starter
 
 ``` 
 <?xml version="1.0" encoding="UTF-8"?>
