@@ -12,5 +12,5 @@ management:
       exposure:
         include: hystrix.stream
 turbine:
-  appConfig: zhacker-gateway-route,retail-spu
+  appConfig: retail-spu
   clusterNameExpression: "'default'"

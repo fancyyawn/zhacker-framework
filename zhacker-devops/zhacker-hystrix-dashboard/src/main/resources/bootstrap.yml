@@ -3,9 +3,9 @@ server:
 spring:
   application:
     name: zhacker-hystrix-dashboard
-#  cloud:
-#    config:
-#      label: master
-#      uri: http://localhost:9090
-#      name: config-info
-#      profile: dev
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:9090
+      name: ${spring.application.name:zhacker-hystrix-dashboard}
+      profile: default
