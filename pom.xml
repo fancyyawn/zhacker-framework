@@ -12,6 +12,7 @@
         <module>zhacker-core</module>
         <module>zhacker-boot-project</module>
         <module>zhacker-devops</module>
+        <module>zhacker-samples</module>
     </modules>
 
     <properties>
