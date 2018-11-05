@@ -18,6 +18,7 @@
         <module>zhacker-config-server</module>
         <module>zhacker-discovery-eureka</module>
         <module>zhacker-spring-admin</module>
+        <module>zhacker-discovery-eureka-admin</module>
     </modules>
 
 </project>

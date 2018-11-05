@@ -82,6 +82,11 @@
                 <artifactId>zhacker-boot-starter-swagger</artifactId>
                 <version>${zhacker-boot.version}</version>
             </dependency>
+            <dependency>
+                <groupId>top.zhacker</groupId>
+                <artifactId>zhacker-boot-starter-eureka-admin</artifactId>
+                <version>${zhacker-boot.version}</version>
+            </dependency>
 
             <!-- db -->
             <dependency>

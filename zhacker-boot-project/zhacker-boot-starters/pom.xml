@@ -21,6 +21,7 @@
         <module>zhacker-boot-starter-swagger</module>
         <module>zhacker-boot-starter-cache</module>
         <module>zhacker-boot-starter-auth-identity</module>
+        <module>zhacker-boot-starter-eureka-admin</module>
     </modules>
 
 
