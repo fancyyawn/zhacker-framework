@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: zhacker-spring-admin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 9091

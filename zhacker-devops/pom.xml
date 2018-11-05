@@ -17,6 +17,7 @@
         <module>zhacker-hystrix-dashboard</module>
         <module>zhacker-config-server</module>
         <module>zhacker-discovery-eureka</module>
+        <module>zhacker-spring-admin</module>
     </modules>
 
 </project>
