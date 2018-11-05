@@ -1,0 +1,11 @@
+server:
+  port: 9099
+spring:
+  application:
+    name: zhacker-hystrix-dashboard
+#  cloud:
+#    config:
+#      label: master
+#      uri: http://localhost:9090
+#      name: config-info
+#      profile: dev

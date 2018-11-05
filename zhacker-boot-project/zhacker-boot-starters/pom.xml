@@ -20,6 +20,7 @@
         <module>zhacker-boot-starter-aop</module>
         <module>zhacker-boot-starter-swagger</module>
         <module>zhacker-boot-starter-cache</module>
+        <module>zhacker-boot-starter-auth-identity</module>
     </modules>
 
 
