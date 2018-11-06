@@ -26,8 +26,8 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-//import com.nimbusds.jose.jwk.JWKSet;
-//import com.nimbusds.jose.jwk.RSAKey;
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jose.jwk.RSAKey;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -171,10 +171,9 @@ class JwkSetEndpoint {
 	@GetMapping("/.well-known/jwks.json")
 	@ResponseBody
 	public Map<String, Object> getKey(Principal principal) {
-		return Collections.emptyMap();
-//		RSAPublicKey publicKey = (RSAPublicKey) this.keyPair.getPublic();
-//		RSAKey key = new RSAKey.Builder(publicKey).build();
-//		return new JWKSet(key).toJSONObject();
+		RSAPublicKey publicKey = (RSAPublicKey) this.keyPair.getPublic();
+		RSAKey key = new RSAKey.Builder(publicKey).build();
+		return new JWKSet(key).toJSONObject();
 	}
 }
 

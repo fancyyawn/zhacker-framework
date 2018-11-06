@@ -1,0 +1,8 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${jwk-url:http://localhost:8181}/.well-known/jwks.json
+server:
+  port: 8191
