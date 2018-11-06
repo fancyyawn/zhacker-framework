@@ -20,6 +20,7 @@
         <module>zhacker-spring-admin</module>
         <module>zhacker-discovery-eureka-admin</module>
         <module>zhacker-gateway-zuul</module>
+        <module>zhacker-gateway-pivotal</module>
     </modules>
 
 </project>

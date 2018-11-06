@@ -87,6 +87,11 @@
                 <artifactId>zhacker-boot-starter-eureka-admin</artifactId>
                 <version>${zhacker-boot.version}</version>
             </dependency>
+            <dependency>
+                <groupId>top.zhacker</groupId>
+                <artifactId>zhacker-boot-starter-auth-identity</artifactId>
+                <version>${zhacker-boot.version}</version>
+            </dependency>
 
             <!-- db -->
             <dependency>
@@ -278,6 +283,11 @@
                 <groupId>cn.springcloud.dubbo</groupId>
                 <artifactId>spring-cloud-dubbo-starter</artifactId>
                 <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.marcosbarbero.cloud</groupId>
+                <artifactId>spring-cloud-zuul-ratelimit</artifactId>
+                <version>2.0.6.RELEASE</version>
             </dependency>
 
         </dependencies>
