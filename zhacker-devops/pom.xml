@@ -21,6 +21,7 @@
         <module>zhacker-discovery-eureka-admin</module>
         <module>zhacker-gateway-zuul</module>
         <module>zhacker-gateway-pivotal</module>
+        <module>zhacker-passport-webmvc</module>
     </modules>
 
 </project>
