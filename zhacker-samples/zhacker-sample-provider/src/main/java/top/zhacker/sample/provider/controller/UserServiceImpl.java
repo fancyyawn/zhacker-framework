@@ -1,6 +1,10 @@
 package top.zhacker.sample.provider.controller;
 
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import top.zhacker.sample.provider.api.User;
 import top.zhacker.sample.provider.api.UserPageRequest;
@@ -24,13 +28,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Long create(User user) {
+    public Long create(@RequestBody User user) {
         log.info("{}", user);
         return user.getId();
     }
 
     @Override
-    public User findById(Long id) {
+    public User findById(@PathVariable("id") Long id) {
         return new User().setId(id).setName("zhang").setAge(10);
     }
 }

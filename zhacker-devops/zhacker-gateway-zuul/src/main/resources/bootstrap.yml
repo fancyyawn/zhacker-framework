@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: zhacker-zuul-server
+server:
+  port: 7777
+

@@ -24,6 +24,8 @@ dubbo:
   scan:
     basePackages: top.zhacker.ch4.api
 
+swagger:
+  basePackage: top.zhacker.sample.provider
 
 management:
   security:

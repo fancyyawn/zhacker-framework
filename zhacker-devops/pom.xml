@@ -19,6 +19,7 @@
         <module>zhacker-discovery-eureka</module>
         <module>zhacker-spring-admin</module>
         <module>zhacker-discovery-eureka-admin</module>
+        <module>zhacker-gateway-zuul</module>
     </modules>
 
 </project>

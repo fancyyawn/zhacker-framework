@@ -3,39 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>zhacker-samples</artifactId>
+        <artifactId>zhacker-devops</artifactId>
         <groupId>top.zhacker</groupId>
         <version>2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zhacker-sample-provider</artifactId>
+    <artifactId>zhacker-gateway-zuul</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>top.zhacker</groupId>
-            <artifactId>zhacker-sample-provider-api</artifactId>
-            <version>2.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.springcloud.feign</groupId>
-            <artifactId>venus-cloud-starter-feign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.springcloud.dubbo</groupId>
-            <artifactId>spring-cloud-dubbo-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -43,7 +26,24 @@
         </dependency>
         <dependency>
             <groupId>top.zhacker</groupId>
-            <artifactId>zhacker-boot-starter-swagger</artifactId>
+            <artifactId>zhacker-boot-starter-auth-identity</artifactId>
+            <version>2.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
         </dependency>
     </dependencies>
 

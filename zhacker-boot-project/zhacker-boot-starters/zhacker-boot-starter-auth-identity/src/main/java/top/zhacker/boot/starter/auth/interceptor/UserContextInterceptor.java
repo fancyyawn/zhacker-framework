@@ -18,12 +18,12 @@ public class UserContextInterceptor implements HandlerInterceptor {
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse respone, Object arg2) throws Exception {
-		Operator user = new Operator(HttpConvertUtil.httpRequestToMap(request));
-		if(StringUtils.isEmpty(user.getId()) && StringUtils.isEmpty(user.getName())) {
-			log.error("the user is null, please access from gateway or check user info");
-			return false;
-		}
-		UserContextHolder.set(user);
+//		Operator user = new Operator(HttpConvertUtil.httpRequestToMap(request));
+//		if(StringUtils.isEmpty(user.getId()) && StringUtils.isEmpty(user.getName())) {
+//			log.error("the user is null, please access from gateway or check user info");
+//			return false;
+//		}
+//		UserContextHolder.set(user);
 		return true;
 	}
 

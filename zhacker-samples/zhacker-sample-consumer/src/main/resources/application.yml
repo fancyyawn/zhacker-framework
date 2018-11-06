@@ -46,7 +46,7 @@ sample-provider:
 ribbon:
   eager-load:
     enabled: true
-    clients: ch4-provider
+    clients: sample-provider
 
 management:
   security:
