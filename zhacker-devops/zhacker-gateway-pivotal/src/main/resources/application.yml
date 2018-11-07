@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: spring-cloud-gateway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${jwk-url:http://localhost:8181}/.well-known/jwks.json
   cloud:
     gateway:
       discovery:
@@ -46,3 +51,5 @@ management:
         include: '*'
   security:
     enabled: false
+
+spring.webflux.hiddenmethod.filter.enabled: false
