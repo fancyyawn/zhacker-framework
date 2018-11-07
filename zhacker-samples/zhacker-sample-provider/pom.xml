@@ -45,6 +45,22 @@
             <groupId>top.zhacker</groupId>
             <artifactId>zhacker-boot-starter-swagger</artifactId>
         </dependency>
+        <dependency>
+            <groupId>top.zhacker</groupId>
+            <artifactId>zhacker-boot-starter-aop</artifactId>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-sleuth</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+        <!--<dependency> -->
+            <!--<groupId>org.springframework.amqp</groupId>-->
+            <!--<artifactId>spring-rabbit</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>

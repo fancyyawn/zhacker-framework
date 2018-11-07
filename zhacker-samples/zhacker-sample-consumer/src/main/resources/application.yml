@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: sample-consumer
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://localhost:9411/
 
 
 eureka:

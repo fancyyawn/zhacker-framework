@@ -3,6 +3,7 @@ package top.zhacker.sample.consumer.controller;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import top.zhacker.boot.aop.log.ParamLog;
 import top.zhacker.sample.consumer.client.HystrixUserService;
 import top.zhacker.sample.provider.api.UserVO;
 import top.zhacker.sample.provider.api.UserCreateRequest;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@ParamLog
 public class UserController {
 
 	@Autowired
