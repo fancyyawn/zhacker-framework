@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-public class User {
+public class UserVO {
     private Long id;
     private String name;
     private Integer age;

@@ -1,14 +1,14 @@
 package top.zhacker.sample.provider.controller;
 
-import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import top.zhacker.sample.provider.api.User;
+import top.zhacker.core.response.Result;
+import top.zhacker.sample.provider.api.UserCreateRequest;
 import top.zhacker.sample.provider.api.UserPageRequest;
 import top.zhacker.sample.provider.api.UserService;
+import top.zhacker.sample.provider.api.UserVO;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,19 +22,19 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public List<User> page(UserPageRequest request) {
+    public Result<List<UserVO>> page(UserPageRequest request) {
         log.info("{}", request);
-        return Arrays.asList(new User().setId(1L).setName("zhang").setAge(request.getAge()));
+        return Result.ok(Arrays.asList(new UserVO().setId(1L).setName("zhang").setAge(request.getAge())));
     }
 
     @Override
-    public Long create(@RequestBody User user) {
+    public Result<Long> create(@RequestBody UserCreateRequest user) {
         log.info("{}", user);
-        return user.getId();
+        return Result.ok(user.getId());
     }
 
     @Override
-    public User findById(@PathVariable("id") Long id) {
-        return new User().setId(id).setName("zhang").setAge(10);
+    public Result<UserVO> findById(@PathVariable("id") Long id) {
+        return Result.ok(new UserVO().setId(id).setName("zhang").setAge(10));
     }
 }
