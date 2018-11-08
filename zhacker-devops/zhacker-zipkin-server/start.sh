@@ -1,3 +1,5 @@
+# reference https://github.com/openzipkin/zipkin
+
 curl -sSL https://zipkin.io/quickstart.sh | bash -s
 java -jar zipkin.jar
 
