@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="top.zhacker.sample.retail.online.item.domain.item.search.ItemSearchRepo">
+    <resultMap id="ItemSearchMap" type="top.zhacker.sample.retail.online.item.domain.item.search.ItemSearch">
+        <id column="id" property="id"/>
+        <result column="field" property="field"/>
+        <result column="keyword" property="keyword"/>
+        <result column="count" property="count"/>
+        <result column="version" property="version"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+        
+    </resultMap>
+
+    <sql id="tb">
+        item_search
+    </sql>
+
+    <sql id="cols_all">
+        id, <include refid="cols_exclude_id" />
+    </sql>
+
+    <sql id="cols_exclude_id">
+        field, 
+        keyword, 
+        count, 
+        version, 
+        created_at, 
+        updated_at
+        
+    </sql>
+
+    <sql id="vals">
+        #{field}, 
+        #{keyword}, 
+        #{count}, 
+        0,
+        now(), 
+        now()
+        
+    </sql>
+
+    <sql id="criteria">
+        <if test="field != null">AND field = #{field}</if>
+    </sql>
+
+    <insert id="create" parameterType="top.zhacker.sample.retail.online.item.domain.item.search.ItemSearch" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO <include refid="tb" />
+        (<include refid="cols_exclude_id" />)
+        VALUES
+        (<include refid="vals" />)
+    </insert>
+
+    <select id="findById" parameterType="long" resultMap="ItemSearchMap" >
+        SELECT <include refid="cols_all" /> FROM <include refid="tb" />
+        WHERE id = #{id}
+    </select>
+
+    <select id="findByFieldAndKeyWord" parameterType="map" resultMap="ItemSearchMap" >
+        SELECT <include refid="cols_all" /> FROM <include refid="tb" />
+        WHERE field = #{field} and keyword = #{keyword}
+        limit 1
+    </select>
+
+
+    <update id="update" parameterType="top.zhacker.sample.retail.online.item.domain.item.search.ItemSearch">
+        UPDATE <include refid="tb"/>
+        <set>
+            <if test="count != null">count = #{count},</if>
+            
+            
+            updated_at=now(),
+            version = version + 1
+        </set>
+        WHERE id = #{id} and version = #{version}
+    </update>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM <include refid="tb"/>
+        WHERE id = #{id}
+    </delete>
+
+    <select id="list" parameterType="map" resultMap="ItemSearchMap">
+        SELECT <include refid="cols_all"/> FROM <include refid="tb"/>
+        <where>
+            <include refid="criteria"/>
+        </where>
+    </select>
+
+    <select id="count" parameterType="map" resultType="long">
+        SELECT count(1) FROM <include refid="tb"/>
+        <where>
+            <include refid="criteria"/>
+        </where>
+    </select>
+
+    <select id="page" parameterType="map" resultMap="ItemSearchMap">
+        SELECT <include refid="cols_all"/> FROM <include refid="tb"/>
+        <where>
+            <include refid="criteria"/>
+        </where>
+        order by `count` desc
+        LIMIT #{offset}, #{limit}
+    </select>
+
+</mapper>

@@ -16,6 +16,7 @@
         <module>zhacker-sample-provider-api</module>
         <module>zhacker-sample-provider</module>
         <module>zhacker-sample-consumer</module>
+        <module>zhacker-sample-retail-online</module>
         <module>zhacker-sample-oauth2-resource-webflux</module>
     </modules>
 

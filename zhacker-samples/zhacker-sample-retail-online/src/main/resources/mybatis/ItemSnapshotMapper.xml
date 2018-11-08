@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="top.zhacker.sample.retail.online.item.domain.item.snapshot.ItemSnapshotRepo">
+    <resultMap id="ItemSnapshotMap" type="top.zhacker.sample.retail.online.item.domain.item.snapshot.ItemSnapshot">
+        <id column="id" property="id"/>
+        <result column="item_id" property="itemId"/>
+        <result column="item_md5" property="itemMd5"/>
+        <result column="snapshot" property="snapshot"
+                typeHandler="top.zhacker.sample.retail.online.item.domain.mybatis.ItemVOTypeHandler"/>
+        <result column="version" property="version"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+        
+    </resultMap>
+
+    <sql id="tb">
+        item_snapshot
+    </sql>
+
+    <sql id="cols_all">
+        id, <include refid="cols_exclude_id" />
+    </sql>
+
+    <sql id="cols_exclude_id">
+        item_id, 
+        item_md5, 
+        snapshot,
+        version, 
+        created_at, 
+        updated_at
+        
+    </sql>
+
+    <sql id="vals">
+        #{itemId}, 
+        #{itemMd5}, 
+        #{snapshot},
+        #{version}, 
+        now(), 
+        now()
+        
+    </sql>
+
+    <sql id="criteria">
+        <if test="id != null">AND id = #{id}</if>
+        <if test="itemId != null">AND item_id = #{itemId}</if>
+        <if test="itemMd5 != null">AND item_md5 = #{itemMd5}</if>
+        <if test="version != null">AND version = #{version}</if>
+        
+        
+        
+    </sql>
+
+    <insert id="create" parameterType="top.zhacker.sample.retail.online.item.domain.item.snapshot.ItemSnapshot" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO <include refid="tb" />
+        (<include refid="cols_exclude_id" />)
+        VALUES
+        (<include refid="vals" />)
+    </insert>
+
+    <select id="findById" parameterType="long" resultMap="ItemSnapshotMap" >
+        SELECT <include refid="cols_all" /> FROM <include refid="tb" />
+        WHERE id = #{id}
+    </select>
+
+    <select id="findByItemIdAndItemMd5" parameterType="map" resultType="long" >
+        SELECT id FROM <include refid="tb" />
+        WHERE item_id = #{itemId} and item_md5 = #{itemMd5} limit 1
+    </select>
+
+
+    <update id="update" parameterType="top.zhacker.sample.retail.online.item.domain.item.snapshot.ItemSnapshot">
+        UPDATE <include refid="tb"/>
+        <set>
+            <if test="itemId != null">item_id = #{itemId},</if>
+            <if test="itemMd5 != null">item_md5 = #{itemMd5},</if>
+            <if test="snapshot != null">snapshot = #{snapshot},</if>
+            
+            
+            updated_at=now(),
+            version = version + 1
+        </set>
+        WHERE id = #{id} and version = #{version}
+    </update>
+
+    <delete id="batchDelete" parameterType="long">
+        DELETE FROM <include refid="tb"/>
+        WHERE id = #{id}
+    </delete>
+
+    <select id="list" parameterType="map" resultMap="ItemSnapshotMap">
+        SELECT <include refid="cols_all"/> FROM <include refid="tb"/>
+        <where>
+            <include refid="criteria"/>
+        </where>
+    </select>
+
+    <select id="count" parameterType="map" resultType="long">
+        SELECT count(1) FROM <include refid="tb"/>
+        <where>
+            <include refid="criteria"/>
+        </where>
+    </select>
+
+    <select id="paging" parameterType="map" resultMap="ItemSnapshotMap">
+        SELECT <include refid="cols_all"/> FROM <include refid="tb"/>
+        <where>
+            <include refid="criteria"/>
+        </where>
+        LIMIT #{offset}, #{limit}
+    </select>
+
+</mapper>

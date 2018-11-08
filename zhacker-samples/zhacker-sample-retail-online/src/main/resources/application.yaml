@@ -1,0 +1,20 @@
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-handlers-package: top.zhacker.sample.retail.online.item.domain.mybatis
+
+swagger:
+  basePackage: top.zhacker.sample.retail.online.item.rest.item
+server:
+  port: 9002
+spring:
+  application:
+    name: retail-online
+  datasource:
+    url: jdbc:mysql://localhost:3306/retail?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+    username: root
+    password: anywhere
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
