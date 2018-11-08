@@ -1,5 +1,6 @@
 package top.zhacker.sample.retail.online.item.application;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import top.zhacker.sample.retail.online.item.domain.category.Category;
 import top.zhacker.sample.retail.online.item.application.category.param.CategoryCreateParam;
 import top.zhacker.sample.retail.online.item.domain.category.CategoryRepo;
@@ -29,7 +30,8 @@ public class CategoryService {
   public Category findById(Long id){
     return Category.findById(categoryRepo, id);
   }
-  
+
+  @SentinelResource("category-findAll")
   public List<Category> findAll(){
     return Category.findAll(categoryRepo);
   }
