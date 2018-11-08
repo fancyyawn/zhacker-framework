@@ -4,6 +4,6 @@ then
     wget http://edas-public.oss-cn-hangzhou.aliyuncs.com/install_package/demo/sentinel-dashboard.jar
 fi
 
-java -jar sentinel-dashboard.jar
+java -jar -Dserver.port=15000 sentinel-dashboard.jar
 
 
