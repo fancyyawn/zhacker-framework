@@ -1,9 +1,3 @@
-server:
-  port: 8012
-spring:
-  application:
-    name: sample-provider
-
 eureka:
     client:
       serviceUrl:

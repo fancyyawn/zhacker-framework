@@ -1,8 +1,4 @@
-server:
-  port: 8011
 spring:
-  application:
-    name: sample-consumer
   sleuth:
     sampler:
       probability: 1.0
@@ -16,10 +12,10 @@ eureka:
            defaultZone: http://localhost:8761/eureka
 
 
-logging:
-     level:
-       top.zhacker.sample: debug
-       okhttp3: debug
+#logging:
+#     level:
+#       top.zhacker.sample: debug
+#       okhttp3: debug
 feign:
   hystrix:
     enabled: true
