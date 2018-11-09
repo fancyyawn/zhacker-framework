@@ -21,6 +21,7 @@
         <swagger.spring>2.8.0</swagger.spring>
         <elastic-job.version>2.1.5</elastic-job.version>
         <zhacker-boot.version>${project.version}</zhacker-boot.version>
+        <discovery.plugin.version>4.8.0-RC1</discovery.plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -44,6 +45,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>0.2.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.nepxion</groupId>
+                <artifactId>discovery</artifactId>
+                <version>${discovery.plugin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
