@@ -18,6 +18,7 @@
         <module>zhacker-sample-consumer</module>
         <module>zhacker-sample-retail-online</module>
         <module>zhacker-sample-oauth2-resource-webflux</module>
+        <module>zhacker-sample-grey</module>
     </modules>
 
 
