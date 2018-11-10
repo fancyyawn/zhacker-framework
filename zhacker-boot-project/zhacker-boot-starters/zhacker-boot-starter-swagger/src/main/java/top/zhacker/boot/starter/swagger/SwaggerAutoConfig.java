@@ -30,6 +30,7 @@ public class SwaggerAutoConfig {
   public Docket createRestApiLocal(SwaggerProperties properties) {
     return new Docket(DocumentationType.SWAGGER_2)
         .apiInfo(apiInfo(properties))
+        .groupName(properties.getGroup())
         .select()
         .apis(RequestHandlerSelectors.basePackage(properties.getBasePackage()))//api接口包扫描路径
         .paths(PathSelectors.any())//可以根据url路径设置哪些请求加入文档，忽略哪些请求
