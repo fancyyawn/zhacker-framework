@@ -12,7 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-package top.zhacker.ddd.collaboration.port.persistence.view;
+package top.zhacker.ddd.collaboration.port.persistence.view.mysql;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -28,7 +28,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 
-@Repository
+//@Repository
 public class MySQLPostProjection extends AbstractSqlProjection implements EventStreamDispatcher {
 
     private static final Class<?> understoodEventTypes[] = {

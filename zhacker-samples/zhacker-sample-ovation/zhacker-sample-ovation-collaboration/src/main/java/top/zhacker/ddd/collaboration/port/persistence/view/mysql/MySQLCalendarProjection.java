@@ -12,7 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-package top.zhacker.ddd.collaboration.port.persistence.view;
+package top.zhacker.ddd.collaboration.port.persistence.view.mysql;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -29,7 +29,7 @@ import top.zhacker.ddd.collaboration.domain.tenant.Tenant;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-@Component
+//@Component
 public class MySQLCalendarProjection
         extends AbstractSqlProjection
         implements EventStreamDispatcher {
