@@ -3,8 +3,13 @@ package top.zhacker.ddd.identity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import top.zhacker.boot.event.notification.publisher.CloudNotificationPublisher;
+import top.zhacker.boot.event.notification.publisher.NotificationPublisher;
+
 /**
  * Created by zhacker.
  * Time 2018/11/12 下午1:32
@@ -13,6 +18,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @EnableDiscoveryClient
 @EnableAspectJAutoProxy
+@EnableScheduling
 public class IdentityConfig implements CommandLineRunner {
 
     @Override
@@ -29,4 +35,11 @@ public class IdentityConfig implements CommandLineRunner {
 //            }
 //        });
     }
+
+
+    @Bean
+    public NotificationPublisher notificationPublisher(){
+        return new CloudNotificationPublisher();
+    }
+
 }

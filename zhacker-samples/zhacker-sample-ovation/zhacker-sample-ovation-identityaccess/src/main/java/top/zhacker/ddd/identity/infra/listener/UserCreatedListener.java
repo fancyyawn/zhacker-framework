@@ -1,4 +1,4 @@
-package top.zhacker.ddd.identity.listener;
+package top.zhacker.ddd.identity.infra.listener;
 
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Input;
