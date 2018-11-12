@@ -17,13 +17,13 @@ zuul:
   ribbon:
     eager-load:
       enabled: false #开启饥饿加载
-  routes:
-    sample-consumer:
-      path: /sample-consumer/**
-      serviceId: sample-consumer
-    sample-provider:
-      path: /sample-provider/**
-      serviceId: sample-provider
+#  routes:
+#    sample-consumer:
+#      path: /sample-consumer/**
+#      serviceId: sample-consumer
+#    sample-provider:
+#      path: /sample-provider/**
+#      serviceId: sample-provider
   ratelimit:
     key-prefix: zhacker-gateway-zuul #按粒度拆分的临时变量key前缀
     enabled: true #启用开关

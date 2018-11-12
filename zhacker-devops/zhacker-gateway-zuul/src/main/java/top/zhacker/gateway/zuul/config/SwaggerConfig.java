@@ -1,7 +1,9 @@
 package top.zhacker.gateway.zuul.config;
 
-import com.netflix.discovery.EurekaClient;
+import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
 import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,18 +17,28 @@ import java.util.List;
 
 @Configuration
 @EnableSwagger2
+@Slf4j
 public class SwaggerConfig {
 
 	@Autowired
 	ZuulProperties properties;
+
+	@Autowired
+	RouteLocator routeLocator;
 
 	@Primary
 	@Bean
 	public SwaggerResourcesProvider swaggerResourcesProvider() {
 		return () -> {
 			List<SwaggerResource> resources = new ArrayList<>();
-			properties.getRoutes().values().stream()
-					.forEach(route -> resources.add(createResource(route.getServiceId(), route.getServiceId(), "2.0")));
+			routeLocator.getRoutes().forEach(route -> log.info("{}", JSON.toJSONString(route)));
+			routeLocator.getRoutes().stream()
+					.forEach(route -> resources.add(createResource(route.getId(), route.getLocation(), "2.0")));
+
+//			properties.getRoutes().values().forEach(route -> log.info("{}", JSON.toJSONString(route)));
+//
+//			properties.getRoutes().values().stream()
+//					.forEach(route -> resources.add(createResource(route.getServiceId(), route.getServiceId(), "2.0")));
 			return resources;
 		};
 	}

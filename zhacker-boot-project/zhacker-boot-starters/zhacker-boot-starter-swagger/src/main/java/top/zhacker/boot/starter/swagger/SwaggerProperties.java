@@ -17,5 +17,5 @@ public class SwaggerProperties {
   String title = "Swagger2 API文档";
   String description = "";
   String version = "1.0.0";
-  String group="group-default";
+  String group="default";
 }
