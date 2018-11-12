@@ -3,21 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>zhacker-boot-parent</artifactId>
+        <artifactId>zhacker-samples</artifactId>
         <groupId>top.zhacker</groupId>
         <version>2.0-SNAPSHOT</version>
-        <relativePath>../zhacker-boot-project/zhacker-boot-parent</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zhacker-samples</artifactId>
+    <artifactId>zhacker-sample-ovation</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>zhacker-sample-retail-online</module>
-        <module>zhacker-sample-oauth2-resource-webflux</module>
-        <module>zhacker-sample-grey</module>
-        <module>zhacker-sample-springcloud</module>
-        <module>zhacker-sample-ovation</module>
+        <module>zhacker-sample-ovation-identityaccess</module>
+        <module>zhacker-sample-ovation-collaboration</module>
+        <module>zhacker-sample-ovation-agilepm</module>
     </modules>
 
 
