@@ -1,4 +1,4 @@
-package top.zhacker.boot.event.stream.store.impl.mybatis;
+package top.zhacker.boot.event.stream.store.mybatis;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

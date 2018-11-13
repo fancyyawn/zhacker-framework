@@ -4,11 +4,15 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.jdbc.core.JdbcTemplate;
 import top.zhacker.boot.event.notification.tracker.impl.jdbc.SpringJdbcPublishedNotificationTrackerStore;
 import top.zhacker.boot.event.process.impl.jdbc.SpringJdbcTimeConstrainedProcessTrackerRepository;
 import top.zhacker.boot.event.publish.DomainEventPublisher;
 import top.zhacker.boot.event.store.impl.jdbc.SpringJdbcEventStore;
 import top.zhacker.boot.event.store.listener.DomainEventStoreListener;
+import top.zhacker.boot.event.stream.dispatch.jdbc.SpringJdbcParentEventStreamDispatcher;
+import top.zhacker.boot.event.stream.store.EventStreamStore;
+import top.zhacker.boot.event.stream.store.jdbc.SpringJdbcEventStreamStore;
 import top.zhacker.boot.starter.CommonAutoConfig;
 
 
@@ -39,13 +43,23 @@ public class SpringJdbcEventAutoConfig {
   }
 
   @Bean
+  public SpringJdbcEventStore springJdbcEventStore(){
+    return new SpringJdbcEventStore();
+  }
+
+
+  @Bean
   public SpringJdbcTimeConstrainedProcessTrackerRepository springJdbcTimeConstrainedProcessTrackerRepository(){
     return new SpringJdbcTimeConstrainedProcessTrackerRepository();
   }
 
   @Bean
-  public SpringJdbcEventStore springJdbcEventStore(){
-    return new SpringJdbcEventStore();
+  public SpringJdbcEventStreamStore springJdbcEventStreamStore(){
+    return new SpringJdbcEventStreamStore();
   }
 
+  @Bean
+  public SpringJdbcParentEventStreamDispatcher parentEventStreamDispatcher(JdbcTemplate jdbcTemplate, EventStreamStore eventStreamStore){
+    return new SpringJdbcParentEventStreamDispatcher(jdbcTemplate, eventStreamStore);
+  }
 }

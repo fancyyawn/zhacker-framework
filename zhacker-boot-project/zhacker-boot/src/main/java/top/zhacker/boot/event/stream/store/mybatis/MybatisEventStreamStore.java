@@ -1,9 +1,8 @@
-package top.zhacker.boot.event.stream.store.impl.mybatis;
+package top.zhacker.boot.event.stream.store.mybatis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import lombok.Setter;

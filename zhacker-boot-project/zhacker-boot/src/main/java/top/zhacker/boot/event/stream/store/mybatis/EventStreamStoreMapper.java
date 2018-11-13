@@ -1,4 +1,4 @@
-package top.zhacker.boot.event.stream.store.impl.mybatis;
+package top.zhacker.boot.event.stream.store.mybatis;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;

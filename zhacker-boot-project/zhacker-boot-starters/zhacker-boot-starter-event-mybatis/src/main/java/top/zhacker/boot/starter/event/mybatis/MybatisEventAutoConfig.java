@@ -1,16 +1,11 @@
 package top.zhacker.boot.starter.event.mybatis;
 
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.cloud.stream.binding.BinderAwareChannelResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import top.zhacker.boot.event.notification.publisher.CloudNotificationPublisher;
-import top.zhacker.boot.event.notification.publisher.NotificationPublisher;
 import top.zhacker.boot.event.notification.tracker.PublishedNotificationTrackerStore;
 import top.zhacker.boot.event.notification.tracker.impl.mybatis.MybatisPublishedNotificationTrackerStore;
 import top.zhacker.boot.event.process.impl.jdbc.SpringJdbcTimeConstrainedProcessTrackerRepository;
@@ -20,7 +15,7 @@ import top.zhacker.boot.event.store.impl.mybatis.MybatisEventStore;
 import top.zhacker.boot.event.store.listener.DomainEventStoreListener;
 import top.zhacker.boot.event.stream.dispatch.mybatis.MybatisParentEventStreamDispatcher;
 import top.zhacker.boot.event.stream.store.EventStreamStore;
-import top.zhacker.boot.event.stream.store.impl.mybatis.MybatisEventStreamStore;
+import top.zhacker.boot.event.stream.store.mybatis.MybatisEventStreamStore;
 import top.zhacker.boot.starter.CommonAutoConfig;
 
 
@@ -63,7 +58,18 @@ public class MybatisEventAutoConfig {
   public MybatisEventStore mybatisEventStore(){
     return new MybatisEventStore();
   }
-  
+
+  @Bean
+  @ConditionalOnMissingBean(PublishedNotificationTrackerStore.class)
+  public PublishedNotificationTrackerStore mybatisPublishedNotificationTrackerStore(){
+    return new MybatisPublishedNotificationTrackerStore();
+  }
+
+  @Bean
+  public SpringJdbcTimeConstrainedProcessTrackerRepository springJdbcTimeConstrainedProcessTrackerRepository(){
+    return new SpringJdbcTimeConstrainedProcessTrackerRepository();
+  }
+
   @Bean
   @ConditionalOnMissingBean(EventStreamStore.class)
   public MybatisEventStreamStore mybatisEventStreamStore(){
@@ -75,23 +81,6 @@ public class MybatisEventAutoConfig {
   public MybatisParentEventStreamDispatcher parentEventStreamDispatcher(){
     return new MybatisParentEventStreamDispatcher();
   }
-  
-//  @Bean
-//  @ConditionalOnBean({EventStore.class, PublishedNotificationTrackerStore.class, BinderAwareChannelResolver.class})
-//  @ConditionalOnMissingBean(NotificationPublisher.class)
-//  public NotificationPublisher cloudNotificationPublisher(){
-//    return new CloudNotificationPublisher();
-//  }
-//
-  @Bean
-  @ConditionalOnMissingBean(PublishedNotificationTrackerStore.class)
-  public PublishedNotificationTrackerStore mybatisPublishedNotificationTrackerStore(){
-    return new MybatisPublishedNotificationTrackerStore();
-  }
 
-  @Bean
-  public SpringJdbcTimeConstrainedProcessTrackerRepository springJdbcTimeConstrainedProcessTrackerRepository(){
-    return new SpringJdbcTimeConstrainedProcessTrackerRepository();
-  }
   
 }
