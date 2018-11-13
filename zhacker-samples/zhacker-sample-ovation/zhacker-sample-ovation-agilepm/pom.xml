@@ -74,14 +74,14 @@
             <groupId>top.zhacker</groupId>
             <artifactId>zhacker-core</artifactId>
         </dependency>
-        <dependency>
-            <groupId>top.zhacker</groupId>
-            <artifactId>zhacker-boot-starter-event-mybatis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>top.zhacker</groupId>-->
+            <!--<artifactId>zhacker-boot-starter-event-mybatis</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.h2database</groupId>-->
+            <!--<artifactId>h2</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>top.zhacker</groupId>
             <artifactId>zhacker-boot-starter-event-leveldb</artifactId>

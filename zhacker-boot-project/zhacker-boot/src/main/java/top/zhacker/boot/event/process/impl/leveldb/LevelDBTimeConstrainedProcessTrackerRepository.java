@@ -12,11 +12,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-package top.zhacker.boot.starter.event.leveldb;
+package top.zhacker.boot.event.process.impl.leveldb;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 import top.zhacker.boot.event.process.ProcessId;
 import top.zhacker.boot.event.process.TimeConstrainedProcessTracker;
 import top.zhacker.boot.event.process.TimeConstrainedProcessTrackerRepository;
@@ -24,15 +21,9 @@ import top.zhacker.boot.leveldb.AbstractLevelDBRepository;
 import top.zhacker.boot.leveldb.LevelDBKey;
 import top.zhacker.boot.leveldb.LevelDBUnitOfWork;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 
-@Primary
-@Component
 public class LevelDBTimeConstrainedProcessTrackerRepository
         extends AbstractLevelDBRepository
         implements TimeConstrainedProcessTrackerRepository {

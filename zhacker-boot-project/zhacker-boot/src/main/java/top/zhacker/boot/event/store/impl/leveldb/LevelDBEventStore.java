@@ -12,12 +12,13 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-package top.zhacker.boot.starter.event.leveldb;
+package top.zhacker.boot.event.store.impl.leveldb;
 
 
 import org.iq80.leveldb.DB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import top.zhacker.boot.event.store.EventStore;
 import top.zhacker.boot.event.store.StoredEvent;
@@ -33,8 +34,6 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 
-@Component
-@ConditionalOnProperty(name = "event.store", havingValue = "leveldb")
 public class LevelDBEventStore
         extends AbstractLevelDBRepository
         implements EventStore {

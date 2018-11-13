@@ -12,12 +12,9 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-package top.zhacker.boot.starter.event.leveldb;
+package top.zhacker.boot.event.notification.tracker.impl.leveldb;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 import top.zhacker.boot.event.notification.Notification;
 import top.zhacker.boot.event.notification.tracker.PublishedNotificationTracker;
 import top.zhacker.boot.event.notification.tracker.PublishedNotificationTrackerStore;
@@ -27,10 +24,6 @@ import top.zhacker.boot.leveldb.LevelDBUnitOfWork;
 
 import java.util.List;
 
-
-
-@Primary
-@Component
 public class LevelDBPublishedNotificationTrackerStore
     extends AbstractLevelDBRepository
     implements PublishedNotificationTrackerStore {
