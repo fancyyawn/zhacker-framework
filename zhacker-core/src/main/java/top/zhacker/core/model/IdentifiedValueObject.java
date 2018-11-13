@@ -9,7 +9,7 @@ import lombok.Setter;
  * Created by zhacker.
  * Time 2018/6/30 下午1:51
  */
-public class IdentifiedValueObject extends AssertionConcern {
+public class IdentifiedValueObject extends ValueObject {
 
   @Getter
   @Setter(AccessLevel.PROTECTED)

@@ -18,7 +18,19 @@ import java.util.Date;
 
 public interface DomainEvent {
 
-    int getEventVersion();
+    default int getEventVersion(){
+        return eventVersion();
+    }
 
-    Date getOccurredOn();
+    default Date getOccurredOn(){
+        return occurredOn();
+    }
+
+    default int eventVersion() {
+        return getEventVersion();
+    }
+
+    default Date occurredOn() {
+        return getOccurredOn();
+    }
 }

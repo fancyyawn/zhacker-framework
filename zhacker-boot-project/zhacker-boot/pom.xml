@@ -101,6 +101,11 @@
             <artifactId>spring-boot-starter-logging</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.iq80.leveldb</groupId>
+            <artifactId>leveldb</artifactId>
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
 

@@ -1,10 +1,6 @@
 package top.zhacker.core.model;
 
-import java.util.Date;
-
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 
@@ -15,13 +11,15 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter(AccessLevel.PROTECTED)
 @Accessors(chain = true)
-public abstract class IdentifiedEntity extends AssertionConcern {
+@ToString
+@EqualsAndHashCode
+public abstract class IdentifiedEntity extends ConcurrencySafeEntity {
   
   private long id = -1L;
   
-  private Integer version;
-  
-  private Date createdAt;
-  
-  private Date updatedAt;
+//  private Integer version;
+//
+//  private Date createdAt;
+//
+//  private Date updatedAt;
 }

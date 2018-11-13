@@ -45,6 +45,10 @@ public final class ProcessId {
         super();
     }
 
+    public String id(){
+        return this.id;
+    }
+
 //    @Override
 //    protected int hashOddValue() {
 //        return 3773;

@@ -22,6 +22,8 @@
         <module>zhacker-boot-starter-cache</module>
         <module>zhacker-boot-starter-auth-identity</module>
         <module>zhacker-boot-starter-eureka-admin</module>
+        <module>zhacker-boot-starter-leveldb</module>
+        <module>zhacker-boot-starter-event-leveldb</module>
     </modules>
 
 
