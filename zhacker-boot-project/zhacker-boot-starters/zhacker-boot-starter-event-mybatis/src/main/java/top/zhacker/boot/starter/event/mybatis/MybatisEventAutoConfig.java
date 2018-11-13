@@ -13,6 +13,7 @@ import top.zhacker.boot.event.notification.publisher.CloudNotificationPublisher;
 import top.zhacker.boot.event.notification.publisher.NotificationPublisher;
 import top.zhacker.boot.event.notification.tracker.PublishedNotificationTrackerStore;
 import top.zhacker.boot.event.notification.tracker.impl.mybatis.MybatisPublishedNotificationTrackerStore;
+import top.zhacker.boot.event.process.impl.jdbc.SpringJdbcTimeConstrainedProcessTrackerRepository;
 import top.zhacker.boot.event.publish.DomainEventPublisher;
 import top.zhacker.boot.event.store.EventStore;
 import top.zhacker.boot.event.store.impl.mybatis.MybatisEventStore;
@@ -86,6 +87,11 @@ public class MybatisEventAutoConfig {
   @ConditionalOnMissingBean(PublishedNotificationTrackerStore.class)
   public PublishedNotificationTrackerStore mybatisPublishedNotificationTrackerStore(){
     return new MybatisPublishedNotificationTrackerStore();
+  }
+
+  @Bean
+  public SpringJdbcTimeConstrainedProcessTrackerRepository springJdbcTimeConstrainedProcessTrackerRepository(){
+    return new SpringJdbcTimeConstrainedProcessTrackerRepository();
   }
   
 }

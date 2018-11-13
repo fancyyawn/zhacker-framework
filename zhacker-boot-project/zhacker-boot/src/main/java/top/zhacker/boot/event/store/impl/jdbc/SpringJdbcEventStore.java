@@ -1,5 +1,6 @@
 package top.zhacker.boot.event.store.impl.jdbc;
 
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -18,18 +19,15 @@ import top.zhacker.core.model.DomainEvent;
  * Time 2018/7/4 上午8:51
  */
 public class SpringJdbcEventStore implements EventStore {
-  
-  private JdbcTemplate jdbcTemplate;
-  
-  private Json json;
-  
+
   @Autowired
-  public SpringJdbcEventStore(JdbcTemplate jdbcTemplate, Json json) {
-    this.jdbcTemplate = jdbcTemplate;
-    this.json = json;
-  }
-  
-  
+  @Setter
+  private JdbcTemplate jdbcTemplate;
+
+  @Autowired
+  @Setter
+  private Json json;
+
   @Override
   public List<StoredEvent> allStoredEventsBetween(long aLowStoredEventId, long aHighStoredEventId) {
     return jdbcTemplate.query(
