@@ -2,6 +2,7 @@ package top.zhacker.ddd.agilepm.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import top.zhacker.boot.aop.log.ParamLog;
 import top.zhacker.ddd.agilepm.application.member.MemberApplicationService;
 import top.zhacker.ddd.agilepm.application.member.command.*;
 import top.zhacker.ddd.agilepm.domain.team.member.ProductOwner;
@@ -16,6 +17,7 @@ import java.util.Collection;
  */
 @RestController
 @RequestMapping("/v1/member")
+@ParamLog
 public class MemberApi {
   
   @Autowired

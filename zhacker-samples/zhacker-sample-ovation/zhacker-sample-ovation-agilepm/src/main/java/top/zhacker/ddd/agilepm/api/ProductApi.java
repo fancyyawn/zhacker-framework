@@ -2,6 +2,7 @@ package top.zhacker.ddd.agilepm.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import top.zhacker.boot.aop.log.ParamLog;
 import top.zhacker.ddd.agilepm.application.product.ProductApplicationService;
 import top.zhacker.ddd.agilepm.application.product.command.NewProductCommand;
 import top.zhacker.ddd.agilepm.application.product.command.PlanBacklogItemCommand;
@@ -21,6 +22,7 @@ import java.util.Collection;
  */
 @RestController
 @RequestMapping("/v1/product")
+@ParamLog
 public class ProductApi {
   
   @Autowired

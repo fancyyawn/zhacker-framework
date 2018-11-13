@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.zhacker.boot.aop.log.ParamLog;
 import top.zhacker.ddd.agilepm.domain.product.ProductId;
 import top.zhacker.ddd.agilepm.domain.product.sprint.Sprint;
 import top.zhacker.ddd.agilepm.domain.product.sprint.SprintId;
@@ -17,6 +18,7 @@ import java.util.Collection;
  * Created by zhacker.
  * Time 2018/7/15 下午1:20
  */
+@ParamLog
 @RestController
 @RequestMapping("/v1/sprint")
 public class SprintApi {

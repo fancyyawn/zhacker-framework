@@ -2,6 +2,7 @@ package top.zhacker.ddd.agilepm.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import top.zhacker.boot.aop.log.ParamLog;
 import top.zhacker.ddd.agilepm.application.backlogitem.BacklogItemApplicationService;
 import top.zhacker.ddd.agilepm.application.backlogitem.command.CommitToSprintCommand;
 import top.zhacker.ddd.agilepm.application.backlogitem.command.ScheduleForReleaseCommand;
@@ -22,6 +23,7 @@ import java.util.Collection;
  */
 @RestController
 @RequestMapping("/v1/backlog-item")
+@ParamLog
 public class BacklogItemApi {
   
   @Autowired
