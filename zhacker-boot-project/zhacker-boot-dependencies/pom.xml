@@ -80,6 +80,16 @@
             </dependency>
             <dependency>
                 <groupId>top.zhacker</groupId>
+                <artifactId>zhacker-boot-starter-event-jdbc</artifactId>
+                <version>${zhacker-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.zhacker</groupId>
+                <artifactId>zhacker-boot-starter-event-leveldb</artifactId>
+                <version>${zhacker-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.zhacker</groupId>
                 <artifactId>zhacker-boot-starter-job</artifactId>
                 <version>${zhacker-boot.version}</version>
             </dependency>

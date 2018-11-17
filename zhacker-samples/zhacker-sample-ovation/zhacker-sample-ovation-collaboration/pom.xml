@@ -75,10 +75,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>com.ctrip.framework.apollo</groupId>-->
-        <!--<artifactId>apollo-client</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>top.zhacker</groupId>
             <artifactId>zhacker-core</artifactId>

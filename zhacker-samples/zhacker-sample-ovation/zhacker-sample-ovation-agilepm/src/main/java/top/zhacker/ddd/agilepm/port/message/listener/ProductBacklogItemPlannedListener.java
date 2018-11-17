@@ -19,6 +19,9 @@ public class ProductBacklogItemPlannedListener {
   
   @StreamListener(ListeningChannels.ProductBacklogItemPlanned)
   public void process(ProductBacklogItemPlanned event){
+    if(event.tenantId()==null){
+      return;
+    }
     productApplicationService.plannedProductBacklogItem(
         event.tenantId().getId(),
         event.productId().id(),
