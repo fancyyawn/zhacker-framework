@@ -1,7 +1,7 @@
 Once it is up, this request asks for a token with the "message:read" scope:
 
 ```bash
-curl reader:secret@localhost:8081/oauth/token -d grant_type=password -d username=subject -d password=password
+curl reader:secret@localhost:8181/oauth/token -d grant_type=password -d username=subject -d password=password
 ```
 
 Which will respond with something like:
@@ -19,5 +19,5 @@ Which will respond with something like:
 You can also so the same with the `writer` client:
 
 ```bash
-curl writer:secret@localhost:8081/oauth/token -d grant_type=password -d username=subject -d password=password
+curl writer:secret@localhost:8181/oauth/token -d grant_type=password -d username=subject -d password=password
 ```
