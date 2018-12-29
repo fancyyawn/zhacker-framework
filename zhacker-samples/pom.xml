@@ -17,6 +17,7 @@
         <module>zhacker-sample-oauth2-resource-webflux</module>
         <module>zhacker-sample-grey</module>
         <module>zhacker-sample-springcloud</module>
+        <module>zhacker-sample-oauth2</module>
         <!--<module>zhacker-sample-ovation</module>-->
     </modules>
 
