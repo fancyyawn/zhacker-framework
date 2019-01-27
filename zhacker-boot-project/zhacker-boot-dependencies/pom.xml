@@ -14,7 +14,7 @@
 
     <properties>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
-        <spring.cloud.version>Greenwich.M3</spring.cloud.version>
+        <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
         <!--<spring.boot.version>2.0.4.RELEASE</spring.boot.version>-->
         <!--<spring.cloud.version>Finchley.SR1</spring.cloud.version>-->
         <!--<spring.boot.version>1.5.9.RELEASE</spring.boot.version>-->
@@ -342,15 +342,5 @@
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>http://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
 </project>

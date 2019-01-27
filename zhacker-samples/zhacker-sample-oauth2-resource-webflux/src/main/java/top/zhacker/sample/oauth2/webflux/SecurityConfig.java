@@ -33,10 +33,10 @@ public class SecurityConfig {
 		http
 			.authorizeExchange()
 				.pathMatchers("/message/**").hasAuthority("SCOPE_message:read")
-				.anyExchange().authenticated();
-//				.and()
-//			.oauth2ResourceServer()
-//				.jwt();
+				.anyExchange().authenticated()
+				.and()
+			.oauth2ResourceServer()
+				.jwt();
 		return http.build();
 	}
 }
