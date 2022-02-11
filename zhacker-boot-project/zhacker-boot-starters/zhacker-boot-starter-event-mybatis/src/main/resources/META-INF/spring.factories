@@ -1,2 +1,0 @@
-# Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=top.zhacker.boot.starter.event.mybatis.MybatisEventAutoConfig
